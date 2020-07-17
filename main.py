@@ -23,7 +23,9 @@ def returnColor():
     r,g,b = random.randint(0,255), random.randint(0,255), random.randint(0,255)
     return (r, g, b)
 
-
+i = 0
+c = returnColor()
+d = returnColor()
 try:
     while True:
 
@@ -32,18 +34,22 @@ try:
                 sys.exit()
                 print("No u")
 
-
-        c = returnColor()
-
-        print(c)
+        i += 1
+        
+        #print(c)
 
         screen.fill(c)
 
         x, y = pygame.mouse.get_pos()
 
-        pygame.draw.rect(screen, returnColor(), (x-25, y-25, 50, 50))
-
+        pygame.draw.rect(screen, d, (x-25, y-25, 50, 50))
+        if i > 1000:
+            i = 0
+            c = returnColor()
+            d = returnColor()
         pygame.display.update()
+        
+        
 
 
 except SystemExit:
