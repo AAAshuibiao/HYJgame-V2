@@ -19,26 +19,32 @@ def returnColor():
     r,g,b = random.randint(0,256), random.randint(0,256), random.randint(0,256)
 
 
+try:
 
-while True:
+    while True:
 
-    for event in pygame.event.get():
-        if event.type == QUIT:
-            pygame.display.quit()
-            print("No u")
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                pygame.display.quit()
+                print("No u")
 
-    screen.fill(color_A.clr)
+        screen.fill(color_A.clr)
 
-    x, y = pygame.mouse.get_pos()
+        x, y = pygame.mouse.get_pos()
+
+
+        pygame.display.update()
 
 
 except SystemExit:
     pass
 
-    pygame.display.update()
 
-class block:
-    def __init__(self):
-        pygame.draw.rect()
+
+
+
+#class block:
+#    def __init__(self):
+#        pygame.draw.rect()
 
         
