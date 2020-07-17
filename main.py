@@ -1,6 +1,6 @@
 import sys
 import random
-
+import math
 import pygame
 from pygame.locals import *
 
@@ -26,6 +26,7 @@ def returnColor():
 i = 0
 c = returnColor()
 d = returnColor()
+mousePressed = False
 try:
     while True:
 
@@ -33,17 +34,23 @@ try:
             if event.type == QUIT:
                 sys.exit()
                 print("No u")
+            if event.type == MOUSEBUTTONDOWN:
+                mousePressed = True
+                totalDifference = abs(c[0]-d[0])/20
+                print("You're score is" + totalDifference )
 
-        i += 1
+        if not mousePressed:
+            i += 1
+            x, y = pygame.mouse.get_pos()
         
         #print(c)
 
         screen.fill(c)
 
-        x, y = pygame.mouse.get_pos()
+        
 
         pygame.draw.rect(screen, d, (x-25, y-25, 50, 50))
-        if i > 1000:
+        if i > 1500:
             i = 0
             c = returnColor()
             d = returnColor()
