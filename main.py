@@ -4,3 +4,4 @@ import testModule
 print("Hello world!")
 
 testModule.bruh()
+testModule.gay()
