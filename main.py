@@ -20,7 +20,7 @@ class color_:
         self.clr = (r,g,b)
 """
 
-gayClock = pygame.time.Clock()
+gameClock = pygame.time.Clock()
 
 
 def returnColor():
@@ -31,6 +31,8 @@ i = 0
 c = returnColor()
 d = returnColor()
 mousePressed = False
+
+
 try:
     while True:
 
@@ -38,13 +40,18 @@ try:
             if event.type == QUIT:
                 sys.exit()
 
-            if event.type == MOUSEBUTTONDOWN:
+            if event.type == MOUSEBUTTONDOWN and mousePressed == False:
                 mousePressed = True
                 totalDifference = abs(c[0]-d[0]) + abs(c[1]-d[1]) + abs(c[2]-d[2])
                 score = 100 - (totalDifference // 5)
                 print("Color of the background " + str(c) )
                 print("Color of the square: " + str(d) )
                 print("Your score is " + str(score) + " points out of 100" )
+                print("\nPress any key to continue ...\n\n")
+
+            if event.type == KEYDOWN:
+                i = 0
+                mousePressed = False
 
         if not mousePressed:
             i += 1
@@ -63,7 +70,7 @@ try:
             d = returnColor()
         pygame.display.update()
 
-        gayClock.tick(60)
+        gameClock.tick(60)
         
         
 
