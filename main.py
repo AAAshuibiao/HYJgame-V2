@@ -1,34 +1,40 @@
 import sys
+import random
 
 import pygame
 from pygame.locals import *
 
-import testModule
+pygame.init()
+
+screen = pygame.display.set_mode((500, 500), 0, 32)
+
+class color_:
+    def __init__(self):
+        r = random.randint(0,255)
+        g = random.randint(0,255)
+        b = random.randint(0,255)
+        self.clr = (r,g,b) 
+
+def returnColor():
+    r,g,b = random.randint(0,256), random.randint(0,256), random.randint(0,256)
 
 
-try:
-    testModule.bruh()
 
-    pygame.init()
+while True:
 
-    screen = pygame.display.set_mode((500, 500), 0, 32)
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.display.quit()
+            print("No u")
 
-    while True:
+    screen.fill(color_A.clr)
 
-        for event in pygame.event.get():
-            if event.type == QUIT:
-                sys.exit()
-
-        screen.fill((255, 255, 255))
-
-        x, y = pygame.mouse.get_pos()
-
-        pygame.draw.rect(screen, (255, 0, 0), (x-25, y-25, 50, 50))
-
-        pygame.display.update()
+    x, y = pygame.mouse.get_pos()
 
 
-    a = b
 
-except SystemExit:
-    pass
+    pygame.display.update()
+
+class block:
+    def __init__(self):
+        pygame.draw.rect()
