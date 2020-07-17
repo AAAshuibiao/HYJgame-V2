@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "[Debug]: Integrated terminal (current file)",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "pythonPath": "${command:python.interpreterPath}"
+        },
+        {
+            "name": "[Debug]: External terminal (current file)",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "externalTerminal",
+            "pythonPath": "${command:python.interpreterPath}"
+        }
+    ]
+}
