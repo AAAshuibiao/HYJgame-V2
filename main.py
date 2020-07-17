@@ -27,8 +27,5 @@ try:
 
         pygame.display.update()
 
-
-    a = b
-
 except SystemExit:
     pass
